@@ -1,5 +1,5 @@
 # DELETING BOOK RECORDS
-def delete_book():
+def delete():
     from config import connectSQL
 
     # Connection Establishment
@@ -17,8 +17,8 @@ def delete_book():
     try:
         myCur.execute(query)
         myCon.commit()
-        print("Delete Book Record Successfully!")
+        print("Deleted Record Successfully!")
     except:
-        print("Error Occurred!")
+        print("An Error Occurred!")
     finally:
         myCon.close()

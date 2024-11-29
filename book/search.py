@@ -1,5 +1,5 @@
 # SEARCHING BOOK DETAILS
-def search_book():
+def search():
     from config import connectSQL
     from tabulate import tabulate
 
@@ -8,7 +8,7 @@ def search_book():
     myCur = myCon.cursor()
 
     # Getting Headers
-    myCur.execute("DESCRIBE book")
+    myCur.execute("DESCRIBE books")
     columns = myCur.fetchall()
     headers = [column[0] for column in columns]
 
