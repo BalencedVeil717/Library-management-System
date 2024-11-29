@@ -54,6 +54,15 @@ def add_book():
         myCon.close()
 
 
+# SEARCHING BOOK DETAILS
+def search_book():
+    myCon = connectSQL()
+    myCur = myCon.cursor()
+    print("SEARCHING DETAILS |\n")
+    bookID = int(input("Book ID : "))
+    query="SELECT * FROM book WHERE book_id = {}".format(bookID)
+    myCur.execute(query)
+    columns = myCur.fetchall()
 # UPDATING BOOK DETAILS
 
 
