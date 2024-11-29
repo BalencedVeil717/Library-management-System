@@ -17,7 +17,7 @@ def register():
     last_name = input("] Last Name : ")
     date_of_birth = input("] Date Of Birth [YYYY-MM-DD] : ")
     address = input("] Address : ")
-    phone_number = input("Enter Phone Number")
+    phone_number = input("] Phone Number : ")
     email = input("] Email : ")
     join_date = input("] Join Date [YYYY-MM-DD] : ")
     membership_type = input("] Membership [ standard | premium | student ] : ")
