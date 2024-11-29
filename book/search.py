@@ -13,7 +13,7 @@ def search_book():
     headers = [column[0] for column in columns]
 
     # Creating Interface
-    print("SEARCHING DETAILS |\n")
+    print("] SEARCHING DETAILS |\n")
     bookID = int(input("\tEnter Book ID: "))
 
     # Executing Query

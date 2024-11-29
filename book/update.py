@@ -12,7 +12,7 @@ def update_book():
     details = {i: sqlData[i][0] for i in range(1, len(sqlData))}
 
     # Creating Interface
-    print("UPDATING DETAILS |\n")
+    print("] UPDATING DETAILS |\n")
     bookID = int(input("\tEnter Book ID: "))
     print("\tDetails Available")
     for i in range(1, len(details) + 1):

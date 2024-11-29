@@ -7,7 +7,7 @@ def delete_book():
     myCur = myCon.cursor()
 
     # Creating Interface
-    print("DELETING BOOK RECORD |\n")
+    print("] DELETING BOOK RECORD |\n")
     bookID = int(input("\tEnter Book ID: "))
 
     # Formulating Query
