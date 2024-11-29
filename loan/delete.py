@@ -1,5 +1,5 @@
 # REMOVING LOAN DETAILS
-def delete_loan():
+def delete():
     from config import connectSQL
 
     # Connection Establishment
@@ -24,4 +24,3 @@ def delete_loan():
         myCon.close()
 
 
-delete_loan()
