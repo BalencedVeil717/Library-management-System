@@ -41,7 +41,7 @@ def add_book():
     try:
         myCur.execute(query)
         myCon.commit()
-        print("New Book Added To Database Successfully!")
+        print("Book Added Successfully!")
     except:
         print("An Error Occurred!")
     finally:
