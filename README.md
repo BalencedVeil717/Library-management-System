@@ -7,6 +7,7 @@ Welcome to the Library Management System! This project is a practice exercise de
 - **Books Management**: Add, delete, search, and update book details.
 - **Members Management**: Register, delete, search, and update member details.
 - **Loans Management**: Add, delete, and search loan records.
+- **Reports**: Generate various reports for books, members, and loans.
 
 ## Requirements
 
@@ -30,8 +31,8 @@ Welcome to the Library Management System! This project is a practice exercise de
     ```
 
 3. **Set up the MySQL database**:
-    - Create a new database named library in MySQL.
-    - Create tables books, loans, members with appropriate attributes in it.
+    - Create a new database named `library` in MySQL.
+    - Create tables `books`, `loans`, `members` with appropriate attributes in it.
     - Import the provided SQL script to set up the necessary tables.
 
 4. **Configure the database connection**:
@@ -69,7 +70,13 @@ Library-management-System/
 │   ├── delete.py
 │   └── search.py
 │
+├── report/
+│   ├── books_report.py
+│   ├── members_report.py
+│   └── loans_report.py
+│
 ├── main.py
+├── report.py
 ├── config.py
 └── README.md
 ```
