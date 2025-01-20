@@ -4,10 +4,11 @@ while True:
     print("  |1 - Books Management")
     print("  |2 - Members Management")
     print("  |3 - Loans Management")
-    print("  |4 - Exit")
+    print("  |4 - Show Report")
+    print("  |5 - Exit")
 
     table_opt = input("  |Enter Choice: ")
-    while table_opt not in ["1", "2", "3", "4"]:
+    while table_opt not in ["1", "2", "3", "4", "5"]:
         print("  | Incorrect option selected! Try Again.")
         table_opt = input("  | Enter Choice: ")
 
@@ -104,7 +105,11 @@ while True:
                 search_loan()
             elif loans_opt == "4":
                 break
+    elif table_opt == "4":  # Show Report
+        from report import display_library_report
 
-    elif table_opt == "4":  # Exit
+        display_library_report()
+
+    elif table_opt == "5":  # Exit
         print("\n\n  | Exiting the system...")
         break
