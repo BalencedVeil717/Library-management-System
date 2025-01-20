@@ -1,5 +1,5 @@
 # ADDING LOAN DETAILS
-def add():
+def add_loan():
     from config import connectSQL
 
     # Connection Establishment

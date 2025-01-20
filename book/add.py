@@ -24,7 +24,7 @@ def add_book():
     status = input("] Status [ available | checked out | reserved | lost ]: ")
 
     # Formulating Query
-    query = "INSERT INTO book VALUES({}, '{}', '{}', '{}', '{}', {}, '{}', {}, {}, '{}')".format(
+    query = "INSERT INTO books VALUES({}, '{}', '{}', '{}', '{}', {}, '{}', {}, {}, '{}')".format(
         book_id,
         title,
         author,
@@ -42,7 +42,7 @@ def add_book():
         myCur.execute(query)
         myCon.commit()
         print("Book Added Successfully!")
-    except:
-        print("An Error Occurred!")
+    except Exception as e:
+        print("An Error Occurred!: {}".format(e))
     finally:
         myCon.close()

@@ -1,7 +1,7 @@
-# UPDATING BOOK DETAILS
+# UPDATING MEMBER DETAILS
 
 
-def update():
+def update_member():
     from config import connectSQL
 
     # Connection Establishment
@@ -9,13 +9,13 @@ def update():
     myCur = myCon.cursor()
 
     # Fetching Table Headers
-    myCur.execute("DESCRIBE books")
+    myCur.execute("DESCRIBE members")
     sqlData = myCur.fetchall()
     details = {i: sqlData[i][0] for i in range(1, len(sqlData))}
 
     # Creating Interface
-    print("] UPDATING BOOK DETAILS |\n")
-    bookID = int(input("\tEnter Book ID: "))
+    print("] UPDATING MEMBER DETAILS |\n")
+    memberID = int(input(("\tEnter Member ID : ")))
     print("\tDetails Available :")
     for i in range(1, len(details) + 1):
         print("\t", i, "-", details[i])
@@ -25,15 +25,15 @@ def update():
     print()
 
     # Fetching Current Detail
-    query = "SELECT {} FROM books WHERE book_id = {}".format(inputDetail, bookID)
+    query = "SELECT {} FROM members WHERE member_id = {}".format(inputDetail, memberID)
     myCur.execute(query)
     oldDetail = myCur.fetchone()[0]
     print("\tOld {} = {}".format(inputDetail, oldDetail))
 
     # Updating Detail
     newDetail = input("\n\tEnter New {}: ".format(inputDetail))
-    query = "UPDATE books SET {} = '{}' WHERE book_id = {}".format(
-        inputDetail, newDetail, bookID
+    query = "UPDATE members SET {} = '{}' WHERE member_id = {}".format(
+        inputDetail, newDetail, memberID
     )
 
     # Applying Changes

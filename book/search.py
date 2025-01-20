@@ -1,5 +1,5 @@
-# SEARCHING MEMBER DETAILS
-def search():
+# SEARCHING BOOK DETAILS
+def search_book():
     from config import connectSQL
     from tabulate import tabulate
 
@@ -8,16 +8,16 @@ def search():
     myCur = myCon.cursor()
 
     # Getting Headers
-    myCur.execute("DESCRIBE members")
+    myCur.execute("DESCRIBE books")
     columns = myCur.fetchall()
     headers = [column[0] for column in columns]
 
     # Creating Interface
     print("] SEARCHING DETAILS |\n")
-    memberID = int(input("\tEnter Member ID: "))
+    bookID = int(input("\tEnter Book ID: "))
 
     # Executing Query
-    query = "SELECT * FROM members WHERE member_id = {}".format(memberID)
+    query = "SELECT * FROM books WHERE book_id = {}".format(bookID)
     myCur.execute(query)
     details = list(myCur.fetchone())
 
@@ -25,7 +25,7 @@ def search():
     data = list(zip(headers, details))
 
     # Printing Book Details
-    print("\n\tMember Details |")
+    print("\n\tBook Details |")
     table = tabulate(data, tablefmt="fancy_grid")
     for line in table.split("\n"):
         print("\t", line)

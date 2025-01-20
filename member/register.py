@@ -1,7 +1,7 @@
 # REGISTERING NEW MEMBER
 
 
-def register():
+def register_member():
     from config import connectSQL
 
     # Connection Establishment

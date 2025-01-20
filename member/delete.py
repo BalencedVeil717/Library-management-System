@@ -1,5 +1,5 @@
-# DELETING BOOK RECORDS
-def delete():
+# DELETING MEMBER RECORDS
+def delete_member():
     from config import connectSQL
 
     # Connection Establishment
@@ -7,11 +7,11 @@ def delete():
     myCur = myCon.cursor()
 
     # Creating Interface
-    print("] DELETING BOOK RECORD |\n")
-    bookID = int(input("\tEnter Book ID: "))
+    print("] DELETING MEMBER RECORD |\n")
+    memberID = int(input("\tEnter Member ID: "))
 
     # Formulating Query
-    query = "DELETE FROM books WHERE book_id = {}".format(bookID)
+    query = "DELETE FROM members WHERE member_id = {}".format(memberID)
 
     # Applying Changes
     try:
@@ -22,3 +22,4 @@ def delete():
         print("An Error Occurred!")
     finally:
         myCon.close()
+

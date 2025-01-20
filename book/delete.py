@@ -1,5 +1,5 @@
-# REMOVING LOAN DETAILS
-def delete():
+# DELETING BOOK RECORDS
+def delete_book():
     from config import connectSQL
 
     # Connection Establishment
@@ -7,20 +7,18 @@ def delete():
     myCur = myCon.cursor()
 
     # Creating Interface
-    print("] RETURNING BOOKS |\n")
-    loanID = int(input("\tEnter Loan ID : "))
+    print("] DELETING BOOK RECORD |\n")
+    bookID = int(input("\tEnter Book ID: "))
 
     # Formulating Query
-    query = "DELETE FROM loans WHERE loan_id = {}".format(loanID)
+    query = "DELETE FROM books WHERE book_id = {}".format(bookID)
 
     # Applying Changes
     try:
         myCur.execute(query)
         myCon.commit()
-        print("Loan Removed Successfully!")
+        print("Deleted Record Successfully!")
     except:
         print("An Error Occurred!")
     finally:
         myCon.close()
-
-
