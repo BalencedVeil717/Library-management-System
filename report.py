@@ -1,22 +1,21 @@
-import reports
-import reports.books_data
-import reports.loans_data
-import reports.members_data
+import reports.books_data as books_data
+import reports.loans_data as loans_data
+import reports.members_data as members_data
 
 
 def display_library_report():
-    total_books_count = reports.books_data.total_books()
-    most_borrowed_book_title = reports.books_data.most_borrowed_book()
-    available_books_list = reports.books_data.available_books()
-    loaned_books_list = reports.books_data.loaned_books()
-    reserved_books_list = reports.books_data.reserved_books()
-    total_loans_count = reports.loans_data.total_loans()
-    most_loaned_book_title = reports.loans_data.most_loaned_book()
-    current_loans_list = reports.loans_data.current_loans()
-    overdue_loans_list = reports.loans_data.overdue_loans()
-    total_members_count = reports.members_data.total_members()
-    most_active_member_name = reports.members_data.active_member()
-    inactive_members_list = reports.members_data.inactive_member()
+    total_books_count = books_data.total_books()
+    most_borrowed_book_title = books_data.most_borrowed_book()
+    available_books_list = books_data.available_books()
+    loaned_books_list = books_data.loaned_books()
+    reserved_books_list = books_data.reserved_books()
+    total_loans_count = loans_data.total_loans()
+    most_loaned_book_title = loans_data.most_loaned_book()
+    current_loans_list = loans_data.current_loans()
+    overdue_loans_list = loans_data.overdue_loans()
+    total_members_count = members_data.total_members()
+    most_active_member_name = members_data.active_member()
+    inactive_members_list = members_data.inactive_member()
 
     # Generate the report
     report_lines = []
